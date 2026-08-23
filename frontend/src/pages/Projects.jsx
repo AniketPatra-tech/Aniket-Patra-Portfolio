@@ -1003,8 +1003,8 @@ function Projects() {
                                 </p>
                             </div>
 
-                            <a
-                                href="/contact"
+                            <Link
+                                to="/contact"
                                 className="group flex w-fit items-center gap-3 rounded-full bg-white px-5 py-3 text-xs font-semibold text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white"
                             >
                                 Get in touch
@@ -1013,7 +1013,7 @@ function Projects() {
                                     size={15}
                                     className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                                 />
-                            </a>
+                            </Link>
 
                         </div>
                     </motion.div>

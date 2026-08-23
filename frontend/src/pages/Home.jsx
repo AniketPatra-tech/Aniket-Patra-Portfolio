@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
     ArrowDownRight,
     ArrowUpRight,
@@ -7,6 +8,7 @@ import {
     Layers3,
     Sparkles,
 } from "lucide-react";
+
 import aniketImg from "../assets/aniketimg.png";
 
 const fadeUp = {
@@ -31,7 +33,6 @@ function Home() {
             {/* =====================================================
                 BACKGROUND
             ====================================================== */}
-
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
                 {/* Large ambient glow */}
@@ -58,7 +59,6 @@ function Home() {
             {/* =====================================================
                 HERO
             ====================================================== */}
-
             <section className="relative z-10">
                 <div className="mx-auto max-w-7xl px-5 pb-20 pt-32 sm:px-8 sm:pt-36 lg:pb-28 lg:pt-40">
 
@@ -101,8 +101,10 @@ function Home() {
 
                             {/* Actions */}
                             <div className="mt-9 flex flex-wrap items-center gap-3">
-                                <a
-                                    href="/projects"
+
+                                {/* INTERNAL ROUTE */}
+                                <Link
+                                    to="/projects"
                                     className="group flex items-center gap-3 rounded-full bg-white px-5 py-3.5 text-[12px] font-semibold text-black transition-all duration-300 hover:bg-blue-500 hover:text-white"
                                 >
                                     View my projects
@@ -111,14 +113,15 @@ function Home() {
                                         size={15}
                                         className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                                     />
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="/contact"
+                                {/* INTERNAL ROUTE */}
+                                <Link
+                                    to="/contact"
                                     className="flex items-center gap-2 rounded-full border border-white/[0.1] px-5 py-3.5 text-[12px] font-medium text-white/50 transition-all duration-300 hover:border-white/25 hover:text-white"
                                 >
                                     Let's talk
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Mini stats */}
@@ -143,7 +146,6 @@ function Home() {
                         {/* =================================================
                             PROFILE CARD
                         ================================================== */}
-
                         <motion.div
                             initial={{
                                 opacity: 0,
@@ -279,8 +281,14 @@ function Home() {
 
                     {/* Scroll indicator */}
                     <motion.div
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{
+                            opacity: 0,
+                            y: -8,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                        }}
                         transition={{
                             delay: 1.2,
                             duration: 0.7,
@@ -338,7 +346,6 @@ function Home() {
             {/* =====================================================
                 ABOUT
             ====================================================== */}
-
             <section className="relative z-10 border-t border-white/[0.06]">
                 <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
 
@@ -381,7 +388,6 @@ function Home() {
             {/* =====================================================
                 SKILLS
             ====================================================== */}
-
             <section className="relative z-10 border-t border-white/[0.06]">
                 <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
 
@@ -437,7 +443,6 @@ function Home() {
             {/* =====================================================
                 CTA
             ====================================================== */}
-
             <section className="relative z-10 border-t border-white/[0.06]">
                 <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8">
 
@@ -473,8 +478,9 @@ function Home() {
                                 </p>
                             </div>
 
-                            <a
-                                href="/contact"
+                            {/* INTERNAL ROUTE */}
+                            <Link
+                                to="/contact"
                                 className="group flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3.5 text-xs font-semibold text-black transition-all duration-300 hover:bg-blue-500 hover:text-white"
                             >
                                 Get in touch
@@ -483,7 +489,7 @@ function Home() {
                                     size={15}
                                     className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                                 />
-                            </a>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
@@ -492,8 +498,6 @@ function Home() {
             {/* =====================================================
                 FOOTER
             ====================================================== */}
-
-            {/* ================= FOOTER ================= */}
             <footer className="relative z-10 border-t border-slate-200 bg-white text-slate-900">
 
                 <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
@@ -545,16 +549,14 @@ function Home() {
                                 practical and meaningful technology.
                             </p>
 
-                            {/* Email */}
+                            {/* Email - EXTERNAL MAIL LINK */}
                             <a
                                 href="mailto:aniketpatra3131@gmail.com"
                                 className="mt-5 inline-block text-sm font-medium text-slate-700 transition-colors duration-300 hover:text-blue-600"
                             >
                                 aniketpatra3131@gmail.com
                             </a>
-
                         </motion.div>
-
 
                         {/* ================= QUICK LINKS ================= */}
                         <motion.div
@@ -580,44 +582,48 @@ function Home() {
 
                             <div className="mt-5 space-y-3">
 
-                                <a
-                                    href="/"
+                                {/* INTERNAL */}
+                                <Link
+                                    to="/"
                                     className="block w-fit text-sm text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
                                 >
                                     Home
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="/projects"
+                                {/* INTERNAL */}
+                                <Link
+                                    to="/projects"
                                     className="block w-fit text-sm text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
                                 >
                                     Projects
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="/about"
+                                {/* INTERNAL */}
+                                <Link
+                                    to="/about"
                                     className="block w-fit text-sm text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
                                 >
                                     About
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="/skills"
+                                {/* INTERNAL */}
+                                <Link
+                                    to="/skills"
                                     className="block w-fit text-sm text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
                                 >
                                     Skills
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="/contact"
+                                {/* INTERNAL */}
+                                <Link
+                                    to="/contact"
                                     className="block w-fit text-sm text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
                                 >
                                     Contact
-                                </a>
+                                </Link>
 
                             </div>
                         </motion.div>
-
 
                         {/* ================= CONNECT ================= */}
                         <motion.div
@@ -651,7 +657,6 @@ function Home() {
                                     Open to opportunities & collaborations
                                 </p>
                             </div>
-
 
                             {/* ================= SOCIALS ================= */}
                             <div className="mt-5 flex flex-wrap gap-2">
@@ -745,12 +750,9 @@ function Home() {
                                         />
                                     </svg>
                                 </a>
-
                             </div>
                         </motion.div>
-
                     </div>
-
 
                     {/* ================= CTA ================= */}
                     <motion.div
@@ -782,26 +784,29 @@ function Home() {
                             </p>
                         </div>
 
-                        <motion.a
-                            href="/projects"
+                        {/* INTERNAL ROUTE */}
+                        <motion.div
                             whileHover={{
                                 y: -2,
                             }}
                             whileTap={{
                                 scale: 0.97,
-                            }}
-                            className="group inline-flex w-fit items-center gap-2 rounded-lg bg-[#111] px-5 py-3 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20"
+                        }}
                         >
-                            Explore Projects
+                            <Link
+                                to="/projects"
+                                className="group inline-flex w-fit items-center gap-2 rounded-lg bg-[#111] px-5 py-3 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20"
+                            >
+                                Explore Projects
 
-                            <ArrowUpRight
-                                size={16}
-                                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                            />
-                        </motion.a>
+                                <ArrowUpRight
+                                    size={16}
+                                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                                />
+                            </Link>
+                        </motion.div>
 
                     </motion.div>
-
 
                     {/* ================= BOTTOM ================= */}
                     <div className="mt-10 flex flex-col justify-between gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center">
@@ -817,7 +822,6 @@ function Home() {
                     </div>
 
                 </div>
-
             </footer>
         </main>
     );
@@ -861,6 +865,7 @@ function FloatingTech({
             className={`absolute hidden rounded-2xl border border-white/[0.09] bg-[#13161b]/90 px-3.5 py-3 shadow-xl backdrop-blur-xl sm:block ${className}`}
         >
             <div className="flex items-center gap-2.5">
+
                 <span className="text-blue-400">
                     {icon}
                 </span>
@@ -874,6 +879,7 @@ function FloatingTech({
                         {subtitle}
                     </p>
                 </div>
+
             </div>
         </motion.div>
     );
@@ -891,6 +897,7 @@ function Skill({ number, icon, title, text }) {
             className="group border-b border-white/[0.07] p-7 sm:border-r lg:border-b-0 lg:last:border-r-0"
         >
             <div className="flex items-center justify-between">
+
                 <span className="text-white/40 transition-colors duration-300 group-hover:text-blue-400">
                     {icon}
                 </span>
@@ -898,6 +905,7 @@ function Skill({ number, icon, title, text }) {
                 <span className="font-mono text-[8px] text-white/15">
                     {number}
                 </span>
+
             </div>
 
             <h3 className="mt-10 text-[15px] font-medium">
