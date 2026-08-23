@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
     Code2,
     Database,
@@ -1306,47 +1307,48 @@ function Skills() {
 
                         </div>
 
-                        <motion.a
-                            href="/projects"
+                        <motion.div
                             whileHover={{
                                 y: -3,
                             }}
                             whileTap={{
                                 scale: 0.97,
-                            }}
-                            className="
-                                group
-                                relative
-                                inline-flex
-                                w-fit
-                                items-center
-                                gap-2
-                                overflow-hidden
-                                rounded-full
-                                bg-white
-                                px-6
-                                py-3.5
-                                text-sm
-                                font-semibold
-                                text-[#07090d]
-                                transition-all
-                                duration-300
-                                hover:bg-blue-500
-                                hover:text-white
-                                hover:shadow-[0_10px_35px_rgba(37,99,235,0.25)]
-                            "
+                        }}
                         >
+                            <Link
+                                to="/projects"
+                                className="
+                                    group
+                                    relative
+                                    inline-flex
+                                    w-fit
+                                    items-center
+                                    gap-2
+                                    overflow-hidden
+                                    rounded-full
+                                    bg-white
+                                    px-6
+                                    py-3.5
+                                    text-sm
+                                    font-semibold
+                                    text-[#07090d]
+                                    transition-all
+                                    duration-300
+                                    hover:bg-blue-500
+                                    hover:text-white
+                                    hover:shadow-[0_10px_35px_rgba(37,99,235,0.25)]
+                                "
+                            >
+                                <span className="relative">
+                                    View Projects
+                                </span>
 
-                            <span className="relative">
-                                View Projects
-                            </span>
-
-                            <ArrowUpRight
-                                size={17}
-                                className="relative transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                            />
-
-                        </motion.a>
+                                <ArrowUpRight
+                                    size={17}
+                                    className="relative transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                                />
+                            </Link>
+                        </motion.div>
 
                     </motion.div>
 

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
     ArrowUpRight,
     Mail,
@@ -713,8 +714,8 @@ function Contact() {
                             </h2>
                         </div>
 
-                        <a
-                            href="/projects"
+                        <Link
+                            to="/projects"
                             className="group inline-flex w-fit items-center gap-2 text-sm font-semibold text-white/65 transition-colors hover:text-blue-400"
                         >
                             View Projects
@@ -723,7 +724,7 @@ function Contact() {
                                 size={16}
                                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                             />
-                        </a>
+                        </Link>
                     </motion.div>
 
                 </div>
